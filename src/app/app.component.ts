@@ -11,6 +11,20 @@ export class AppComponent implements OnInit {
   lessThenOrGratterThen = 'lessThen';
   filterLimit = 100;
   barChart;
+  levelsArr = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug'];
+  months = [{month: 'Jan', value: '0'},
+  {month: 'Feb', value: '1'},
+  {month: 'Mar', value: '2'},
+  {month: 'Apr', value: '3'},
+  {month: 'May', value: '4'},
+  {month: 'Jun', value: '5'},
+  {month: 'Jul', value: '6'},
+  {month: 'Aug', value: '7'}];
+
+  from = '0';
+
+  toMonth = '7';
+
   chartData = {
     "dataSet1" : Array.from({ length: 8 }, () => Math.floor(Math.random() * 590) + 10),
     "dataSet2" : Array.from({ length: 8 }, () => Math.floor(Math.random() * 590) + 10)
@@ -84,6 +98,11 @@ export class AppComponent implements OnInit {
         //console.log("?????????", this.barChart.data.datasets[i].data);
       }
     });
+    this.barChart.update();
+  }
+
+  applyDateFilter(){
+    this.barChart.data.labels = this.levelsArr.slice(parseInt(this.from), parseInt(this.toMonth) + 1);
     this.barChart.update();
   }
 

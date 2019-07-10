@@ -8,5 +8,19 @@
     </select>&nbsp;&nbsp;
     <input [(ngModel)]="filterLimit" placeholder="Filter Limit" style="width: 150px;height: 30px;"><br><br>
     <button class="button" (click)="applyFilter(filterLimit)">Apply Filter</button>
-  </div>
+  
+<div style="margin-left: auto">
+  <select [(ngModel)]="from" style="width: 150px;height: 30px;">
+    <option *ngFor="let m of months" [value]='m.value'>{{m.month}}</option>
+  </select>
+&nbsp;&nbsp;
+
+<select [(ngModel)]="toMonth" style="width: 150px;height: 30px;">
+  <option *ngFor="let m1 of months" [value]='m1.value'>{{m1.month}}</option>
+</select> 
+</div>
+
+<button class="button" (click)="applyDateFilter()">Apply Date Filter</button>
+  
+    
 </div>
