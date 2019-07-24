@@ -2,9 +2,9 @@
 <div class="chart-diplayh">
   <div style="width: 60%; margin: auto">
     <canvas id="bar"></canvas>
-    <select [(ngModel)]="lessThenOrGratterThen" style="width: 150px;height: 30px;">
-      <option value='lessThen'>Less Then</option>
-      <option value='gratterThen'>Gratter Then</option>
+    <select [(ngModel)]="lessThanOrGreaterThan" style="width: 150px;height: 30px;">
+      <option value='lessThan'>Less Than</option>
+      <option value='greaterThan'>Greater Than</option>
     </select>&nbsp;&nbsp;
     <input [(ngModel)]="filterLimit" placeholder="Filter Limit" style="width: 150px;height: 30px;"><br><br>
     <button class="button" (click)="applyFilter(filterLimit)">Apply Filter</button>

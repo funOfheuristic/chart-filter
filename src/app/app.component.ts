@@ -8,7 +8,7 @@ import { Chart } from 'chart.js';
 })
 export class AppComponent implements OnInit {
   title = 'chart-filter';
-  lessThenOrGratterThen = 'lessThen';
+  lessThanOrGreaterThan = 'lessThan';
   filterLimit = 100;
   barChart;
   levelsArr = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug'];
@@ -83,8 +83,7 @@ export class AppComponent implements OnInit {
     this.barChart.data.datasets[1].data = this.chartData.dataSet2;
 
     this.barChart.data.datasets.forEach((data,i) => {
-      //console.log(this.lessThenOrGratterThen);
-      if(this.lessThenOrGratterThen === 'gratterThen'){
+      if(this.lessThanOrGreaterThan === 'greaterThan'){
         this.barChart.data.datasets[i].data = data.data.map(v => {
           if(v >= value) return v
           else return 0;
